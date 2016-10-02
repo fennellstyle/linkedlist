@@ -7,11 +7,25 @@ int main() {
         LinkedList<int> ilist {0, 1, 2, 5};
         std::cout << "Size of ilist: " << ilist.size() << std::endl;
 
-        auto head = ilist.head();
-        do {
-            std::cout << head->get() << std::endl;
-            head = head->next();
-        } while(head);
+        for(auto x: ilist) {
+            std::cout << x << std::endl;
+        }
+
+        // edit
+        for(auto& x: ilist) {
+            x++;
+        }
+
+        // new
+        for(auto x: ilist) {
+            std::cout << "new int: " << x << std::endl;
+            x++;
+        }
+
+        // should be same as above
+        for(auto x: ilist) {
+            std::cout << "same int?: " << x << std::endl;
+        }
     }
 
     // float list

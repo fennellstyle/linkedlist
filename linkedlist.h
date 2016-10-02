@@ -15,7 +15,8 @@ struct Node {
     Node(T v) : val{v}, m_next{nullptr} {}
     std::shared_ptr<Node<T>> next() { return m_next; }
     const std::shared_ptr<Node<T>> next() const { return m_next; }
-    T get() const { return val;}
+    const T get() const { return val;}
+    T& get() { return val;}
     std::shared_ptr<Node<T>> setNext(T v) {
         m_next = std::shared_ptr<Node<T>>(new Node<T>(v));
         return m_next;
@@ -42,6 +43,7 @@ public:
     bool operator==(const LinkedListIter& other) { return p == other.p; }
     bool operator!=(const LinkedListIter& other) { return p != other.p; }
     const typename TNode::value_type& operator*() const { return p->get(); }
+    typename TNode::value_type& operator*() { return p->get(); }
     LinkedListIter<TNode> operator+(int i)
     {
         LinkedListIter<TNode> iter = *this;

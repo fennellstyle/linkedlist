@@ -1,6 +1,5 @@
 #include <iostream>
 #include "linkedlist.h"
-#include <typeinfo>
 
 int main() {
     // int list

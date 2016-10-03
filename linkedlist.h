@@ -83,7 +83,7 @@ public:
     }
 
     iterator begin() const { return iterator(m_front); }
-    iterator end() const { return iterator(m_tail); }
+    iterator end() const { return iterator(m_tail->next); }
 
 private:
     size_t m_size;

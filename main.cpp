@@ -1,5 +1,6 @@
 #include <iostream>
 #include "linkedlist.h"
+#include <typeinfo>
 
 int main() {
     // int list
@@ -40,6 +41,15 @@ int main() {
         }
 
         for(auto x: flist) std::cout << x << std::endl;
+    }
+
+    // invalid
+    LinkedList<double> dlist;
+
+    try {
+        std::cout << dlist.head() << std::endl;
+    } catch (std::out_of_range) {
+        std::cout << "\nCaught out of range error on dlist." << std::endl;
     }
     return 0;
 }
